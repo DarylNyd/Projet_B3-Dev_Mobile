@@ -7,16 +7,24 @@ App on Android
 ## For December 19
 
 -Login/Register
+
 -View Works and Authors
+
 -Visualize the works and their descriptions
+
 -Post his works in the application
+
 -Messaging interface (not functional)
+
 -Dashboard interface (not functional)
 
 ## For January 9
 -Dashboard to manage your account
+
 -Functional messaging interface
+
 -Put filters for different styles
+
 -If possible add payment method
 
 
