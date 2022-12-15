@@ -4,6 +4,10 @@ The purpose of this project is to create an Application for the exhibition and s
 
 App on Android 
 
+See figma prototype here
+
+[View prototype](https://www.figma.com/proto/vHbPphPxaVEp8L6mcMuzNP/Projet-dev-Mobile%2FArt's-Life?page-id=0%3A1&node-id=1%3A3&viewport=839%2C541%2C0.27&scaling=scale-down&starting-point-node-id=1%3A3&show-proto-sidebar=1)
+
 ## For December 19
 
 -Login/Register
