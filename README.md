@@ -6,7 +6,7 @@ App on Android
 
 See figma prototype here
 
-[View prototype](https://www.figma.com/proto/vHbPphPxaVEp8L6mcMuzNP/Projet-dev-Mobile%2FArt's-Life?page-id=0%3A1&node-id=1%3A3&viewport=839%2C541%2C0.27&scaling=scale-down&starting-point-node-id=1%3A3&show-proto-sidebar=1)
+[View prototype](https://www.figma.com/proto/vHbPphPxaVEp8L6mcMuzNP/Projet-dev-Mobile%2FArt's-Life?page-id=0%3A1&node-id=22%3A9&viewport=619%2C285%2C0.12&scaling=scale-down&starting-point-node-id=1%3A3&show-proto-sidebar=1)
 
 ## For December 19
 
