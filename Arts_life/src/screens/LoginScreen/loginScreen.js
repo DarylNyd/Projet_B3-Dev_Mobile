@@ -8,6 +8,7 @@ import {
 //import Logo from '';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import SocialSigninButtons from '../../components/SocialSigninButtons';
 
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
@@ -20,14 +21,6 @@ const LoginScreen = () => {
 
   const onSignUpPress = () => {
     console.warn('Sign Up button pressed');
-  };
-
-  const onFacebookPress = () => {
-    console.warn('Facebook pressed');
-  };
-
-  const onGooglePress = () => {
-    console.warn('Google pressed');
   };
 
   const onForgotpassPress = () => {
@@ -65,19 +58,7 @@ const LoginScreen = () => {
           type="Tertiary"
         />
 
-        <CustomButton
-          text="Sign in with Facebook"
-          onPress={onFacebookPress}
-          bgColor="#e7eaf4"
-          fgColor="#4765a9"
-        />
-
-        <CustomButton
-          text="Sign in with Google"
-          onPress={onGooglePress}
-          bgColor="fae9ea"
-          fgColor="dd4d44"
-        />
+        <SocialSigninButtons />
 
         <Text>Don't have an account?</Text>
 
@@ -90,7 +71,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    //justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   logo: {

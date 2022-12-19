@@ -24,9 +24,10 @@ const CustomButton = ({onPress, text, type, bgColor, fgColor}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: '80%',
     height: 50,
 
+    padding: 10,
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
@@ -36,13 +37,12 @@ const styles = StyleSheet.create({
   container_Primary: {
     backgroundColor: '#5FC2BA',
 
-    width: '100%',
+    width: '80%',
     height: 50,
 
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 5,
   },
 
   container_Secondary: {},
@@ -50,13 +50,12 @@ const styles = StyleSheet.create({
   container_Tertiary: {
     backgroundColor: '#C4D6F0',
 
-    width: '100%',
+    width: '80%',
     height: 50,
 
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 5,
   },
   text: {
     fontSize: 16,

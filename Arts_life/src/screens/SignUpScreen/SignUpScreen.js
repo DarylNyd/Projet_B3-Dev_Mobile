@@ -2,11 +2,16 @@ import React, {useState} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import SocialSigninButtons from '../../components/SocialSigninButtons/SocialSigninButtons';
 
 const SignUpScreen = () => {
+  //state variables
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
+  const [email, setemail] = useState('');
 
+  //functions to handle button presses
   const onLoginPress = () => {
     console.warn('Login button pressed');
   };
@@ -15,24 +20,15 @@ const SignUpScreen = () => {
     console.warn('Sign Up button pressed');
   };
 
-  const onFacebookPress = () => {
-    console.warn('Facebook pressed');
-  };
-
-  const onGooglePress = () => {
-    console.warn('Google pressed');
-  };
-
-  const onForgotpassPress = () => {
-    console.warn('Forgot password button pressed');
+  const onTermsandconditionsPress = () => {
+    console.warn('Terms and conditions button pressed');
   };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
-        <Text>Create Your Account</Text>
+        <Text style={styles.title}>Create Your Account</Text>
         {/*//<Text>Login Screen</Text>*/}
-        <Text>Nice to see you!!! You will need to connect</Text>
 
         <CustomInput
           placeholder="Username"
@@ -40,36 +36,38 @@ const SignUpScreen = () => {
           setValue={setUsername}
         />
         <CustomInput
+          placeholder="Email address"
+          value={email}
+          setValue={setemail}
+        />
+
+        <CustomInput
           placeholder="Password"
           value={password}
           setValue={setPassword}
+          secureTextEntry={true}
+        />
+        <CustomInput
+          placeholder="Confirm Password"
+          value={confirmPass}
+          setValue={setConfirmPass}
+          secureTextEntry={true}
         />
 
-        <CustomButton text="SIGN IN" onPress={onLoginPress} type="Primary" />
+        <CustomButton text="SIGN UP" onPress={onSignUpPress} type="Primary" />
 
-        <CustomButton
-          text="Forgot Password?"
-          onPress={onForgotpassPress}
-          type="Tertiary"
-        />
+        <Text style={styles.text}>
+          By signing up you are accepting our{' '}
+          <Text style={styles.link} onPress={onTermsandconditionsPress}>
+            Terms and conditions
+          </Text>
+        </Text>
 
-        <CustomButton
-          text="Sign in with Facebook"
-          onPress={onFacebookPress}
-          bgColor="#E64B51"
-          fgColor="#4765a9"
-        />
+        <SocialSigninButtons />
 
-        <CustomButton
-          text="Sign in with Google"
-          onPress={onGooglePress}
-          bgColor="#E64B51"
-          fgColor="#dd4d44"
-        />
+        <Text>You already have an account?</Text>
 
-        <Text>Don't have an account?</Text>
-
-        <CustomButton text="SIGN UP" onPress={onSignUpPress} type="Tertiary" />
+        <CustomButton text="SIGN IN" onPress={onLoginPress} type="Tertiary" />
       </View>
     </ScrollView>
   );
@@ -78,13 +76,29 @@ const SignUpScreen = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    //justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  logo: {
-    width: '60%',
-    maxWidth: 300,
-    maxHeight: 300,
+  title: {
+    fontSize: 32,
+    paddingVertical: 15,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    color: '#1C2942',
+  },
+  text: {
+    fontSize: 12,
+    paddingVertical: 10,
+    fontWeight: 'bold',
+    marginVertical: 5,
+    color: '#1C2942',
+  },
+  link: {
+    fontSize: 12,
+    paddingVertical: 10,
+    fontWeight: 'bold',
+    marginVertical: 5,
+    color: '#5FC2BA',
   },
 });
 
