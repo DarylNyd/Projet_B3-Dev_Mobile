@@ -1,18 +1,11 @@
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Text /*Image, useWindowDimensions*/,
-} from 'react-native';
-//import Logo from '';
+import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 
-const LoginScreen = () => {
+const SignUpScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const {height} = useWindowDimensions();
 
   const onLoginPress = () => {
     console.warn('Login button pressed');
@@ -37,12 +30,7 @@ const LoginScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
-        {/*<Image
-        source={Logo}
-        style={[styles.logo, {height: height * 0.3}]}
-        resizeMode="contain"
-  />*/}
-        {/*<Text>Arts and LIfe</Text>*/}
+        <Text>Create Your Account</Text>
         {/*//<Text>Login Screen</Text>*/}
         <Text>Nice to see you!!! You will need to connect</Text>
 
@@ -68,15 +56,15 @@ const LoginScreen = () => {
         <CustomButton
           text="Sign in with Facebook"
           onPress={onFacebookPress}
-          bgColor="#e7eaf4"
+          bgColor="#E64B51"
           fgColor="#4765a9"
         />
 
         <CustomButton
           text="Sign in with Google"
           onPress={onGooglePress}
-          bgColor="fae9ea"
-          fgColor="dd4d44"
+          bgColor="#E64B51"
+          fgColor="#dd4d44"
         />
 
         <Text>Don't have an account?</Text>
@@ -100,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default SignUpScreen;
