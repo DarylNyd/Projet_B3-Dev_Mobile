@@ -1,11 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
+import {ScrollView, StyleSheet, Text} from 'react-native';
+import FilterList from '../../components/FilterList.js/FilterList';
+
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={styles.root}>
-      <Text>Home Screen</Text>
-      {/*<Button title="LogIn" onPress={() => navigation.navigate('LogIn')} />*/}
-    </SafeAreaView>
+    <ScrollView>
+      <FilterList style={styles.filterList} />
+    </ScrollView>
   );
 };
 
@@ -15,6 +16,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#C4D6F0',
+  },
+  filterList: {
+    flex: 1,
   },
 });
 
