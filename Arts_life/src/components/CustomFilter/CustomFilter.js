@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
+//This is a custom filter component that can be used to create a filter button
 const CustomFilter = ({onPress, text, type, bgColor, fgColor}) => {
   return (
     <TouchableOpacity

@@ -2,6 +2,7 @@ import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import CustomFilter from '../CustomFilter/CustomFilter';
 
+//This is the filter list component where we can add more filters to the home screen
 const FilterList = () => {
   return (
     <ScrollView
