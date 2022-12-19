@@ -1,11 +1,6 @@
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Text /*Image, useWindowDimensions*/,
-} from 'react-native';
-//import Logo from '';
+import {View, StyleSheet, ScrollView, Text, Image} from 'react-native';
+import Logo from '../../../assets/images/Logo_Artslife.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSigninButtons from '../../components/SocialSigninButtons';
@@ -13,7 +8,6 @@ import SocialSigninButtons from '../../components/SocialSigninButtons';
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  //const {height} = useWindowDimensions();
 
   const onLoginPress = () => {
     console.warn('Login button pressed');
@@ -30,14 +24,10 @@ const LoginScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
-        {/*<Image
-        source={Logo}
-        style={[styles.logo, {height: height * 0.3}]}
-        resizeMode="contain"
-  />*/}
-        {/*<Text>Arts and LIfe</Text>*/}
-        {/*//<Text>Login Screen</Text>*/}
-        <Text>Nice to see you!!! You will need to connect</Text>
+        <Image source={Logo} style={styles.logo} resizeMode="contain" />
+        <Text style={styles.text}>
+          Nice to see you!!! You will need to connect
+        </Text>
 
         <CustomInput
           placeholder="Username"
@@ -75,9 +65,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: '60%',
+    width: '70%',
     maxWidth: 300,
     maxHeight: 300,
+  },
+  text: {
+    fontSize: 14,
+    marginVertical: 10,
+    paddingBottom: 10,
+    paddingTop: -20,
   },
 });
 
