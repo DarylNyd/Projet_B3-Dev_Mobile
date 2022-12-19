@@ -2,18 +2,16 @@ import React, {useState} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import {useNavigation} from '@react-navigation/native';
 
 const ResetPasswordScreen = () => {
   //state variables
   //const [] = useState('');
+  const navigation = useNavigation();
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   //functions to handle button presses
-
-  const onResetPress = () => {
-    console.warn('Reset button pressed');
-  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -28,7 +26,7 @@ const ResetPasswordScreen = () => {
         />
 
         <CustomInput
-          placeholder="Enter the code sent to your email"
+          placeholder="Confirm Password"
           value={confirmPassword}
           setValue={setConfirmPassword}
           secureTextEntry={true}
@@ -36,8 +34,14 @@ const ResetPasswordScreen = () => {
 
         <CustomButton
           text="Reset Password"
-          onPress={onResetPress}
+          onPress={() => navigation.navigate('Done')}
           type="Primary"
+        />
+
+        <CustomButton
+          text="Back to Sign"
+          onPress={() => navigation.navigate('LogIn')}
+          type="Secondary"
         />
       </View>
     </ScrollView>
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#C4D6F0',
   },
   title: {
     fontSize: 32,

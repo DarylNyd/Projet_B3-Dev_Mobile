@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
-
+import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.root}>
       <Text>Home Screen</Text>
+      {/*<Button title="LogIn" onPress={() => navigation.navigate('LogIn')} />*/}
     </SafeAreaView>
   );
 };

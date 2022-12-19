@@ -45,7 +45,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  container_Secondary: {},
+  container_Secondary: {
+    //backgroundColor: '',
+
+    width: '80%',
+    height: 50,
+
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: 'cyan',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 
   container_Tertiary: {
     backgroundColor: '#C4D6F0',
@@ -72,7 +83,7 @@ const styles = StyleSheet.create({
   text_Secondary: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
   },
 
   text_Tertiary: {

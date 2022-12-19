@@ -2,17 +2,14 @@ import React, {useState} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import {useNavigation} from '@react-navigation/native';
 
 const NewPasswordScreen = () => {
   //state variables
-  //const [] = useState('');
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
 
   //functions to handle button presses
-
-  const onResetPress = () => {
-    console.warn('Reset button pressed');
-  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -28,8 +25,14 @@ const NewPasswordScreen = () => {
 
         <CustomButton
           text="Reset Password"
-          onPress={onResetPress}
+          onPress={() => navigation.navigate('ResetPassword')}
           type="Primary"
+        />
+
+        <CustomButton
+          text="Back to Sign In"
+          onPress={() => navigation.navigate('LogIn')}
+          type="Secondary"
         />
       </View>
     </ScrollView>

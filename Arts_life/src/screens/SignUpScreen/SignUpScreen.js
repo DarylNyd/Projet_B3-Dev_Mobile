@@ -3,22 +3,17 @@ import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSigninButtons from '../../components/SocialSigninButtons/SocialSigninButtons';
+import {useNavigation} from '@react-navigation/native';
 
 const SignUpScreen = () => {
   //state variables
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPass, setConfirmPass] = useState('');
   const [email, setemail] = useState('');
 
   //functions to handle button presses
-  const onLoginPress = () => {
-    console.warn('Login button pressed');
-  };
-
-  const onSignUpPress = () => {
-    console.warn('Sign Up button pressed');
-  };
 
   const onTermsandconditionsPress = () => {
     console.warn('Terms and conditions button pressed');
@@ -54,7 +49,11 @@ const SignUpScreen = () => {
           secureTextEntry={true}
         />
 
-        <CustomButton text="SIGN UP" onPress={onSignUpPress} type="Primary" />
+        <CustomButton
+          text="SIGN UP"
+          type="Primary"
+          onPress={() => navigation.navigate('ConfirmEmail')}
+        />
 
         <Text style={styles.text}>
           By signing up you are accepting our{' '}
@@ -67,7 +66,11 @@ const SignUpScreen = () => {
 
         <Text>You already have an account?</Text>
 
-        <CustomButton text="SIGN IN" onPress={onLoginPress} type="Tertiary" />
+        <CustomButton
+          text="SIGN IN"
+          type="Tertiary"
+          onPress={() => navigation.navigate('LogIn')}
+        />
       </View>
     </ScrollView>
   );

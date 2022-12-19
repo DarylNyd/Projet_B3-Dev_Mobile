@@ -4,23 +4,19 @@ import Logo from '../../../assets/images/Logo_Artslife.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSigninButtons from '../../components/SocialSigninButtons';
+import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const onLoginPress = () => {
-    console.warn('Login button pressed');
+  const Login = () => {
+    if (username === 'Daryl' && password === 'root') {
+      navigation.navigate('Home');
+    } else {
+      console.log('Wrong username or password');
+    }
   };
-
-  const onSignUpPress = () => {
-    console.warn('Sign Up button pressed');
-  };
-
-  const onForgotpassPress = () => {
-    console.warn('Forgot password button pressed');
-  };
-
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
@@ -31,28 +27,35 @@ const LoginScreen = () => {
 
         <CustomInput
           placeholder="Username"
+          onChangeText={setUsername}
           value={username}
           setValue={setUsername}
         />
         <CustomInput
           placeholder="Password"
+          onChangeText={setPassword}
           value={password}
           setValue={setPassword}
+          secureTextEntry={true}
         />
 
-        <CustomButton text="SIGN IN" onPress={onLoginPress} type="Primary" />
+        <CustomButton text="SIGN IN" type="Primary" onPress={() => Login()} />
 
         <CustomButton
           text="Forgot Password?"
-          onPress={onForgotpassPress}
           type="Tertiary"
+          onPress={() => navigation.navigate('NewPassword')}
         />
 
         <SocialSigninButtons />
 
         <Text>Don't have an account?</Text>
 
-        <CustomButton text="SIGN UP" onPress={onSignUpPress} type="Tertiary" />
+        <CustomButton
+          text="SIGN UP"
+          type="Tertiary"
+          onPress={() => navigation.navigate('SignUp')}
+        />
       </View>
     </ScrollView>
   );
@@ -63,6 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#C4D6F0',
   },
   logo: {
     width: '70%',
