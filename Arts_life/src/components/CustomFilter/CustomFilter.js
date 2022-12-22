@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
 
-    paddingHorizontal: 10,
-    marginVertical: 5,
+    paddingHorizontal: 5,
+    marginHorizontal: 2,
   },
   container_Primary: {
     backgroundColor: '#5FC2BA',
