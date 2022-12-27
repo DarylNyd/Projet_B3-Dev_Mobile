@@ -1,18 +1,21 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-//import {AntDesign} from 'react-native-vector-icons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 //finish the animation and the design
+//stepforward
 
 const SkipButton = ({scrollTo}) => {
   return (
     <View style={styles.skip}>
-      <Text style={styles.text}>Skip</Text>
+      <Text onPress={scrollTo} style={styles.text}>
+        Skip
+      </Text>
       <TouchableOpacity
         onPress={scrollTo}
         style={styles.container}
         activeOpacity={0.6}>
-        <Text>skip</Text>
+        <AntDesign name="stepforward" size={20} color="white" />
       </TouchableOpacity>
     </View>
   );
@@ -23,10 +26,10 @@ const styles = StyleSheet.create({
     //flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 60,
-    height: 50,
-    backgroundColor: 'red',
-    borderRadius: 20,
+    width: 40,
+    height: 40,
+    backgroundColor: '#5FC2BA',
+    borderRadius: 50,
     marginHorizontal: 5,
   },
   skip: {
@@ -35,10 +38,13 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    marginLeft: 260,
   },
   text: {
     fontWeight: '900',
     fontSize: 20,
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
     color: '#26474E',
     fontFamily: 'poppins-regular',
   },

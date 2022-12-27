@@ -1,11 +1,29 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, Image} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import Logo from '../../../assets/images/cat_Arts-life.png';
 import CustomButton from '../../components/CustomButton';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoadingPage = () => {
   const navigation = useNavigation();
+
+  //function to clear onboarding cache in order to re see onboarding
+  const clearOnboarding = async () => {
+    try {
+      console.log('Onboarding cleared');
+      await AsyncStorage.removeItem('@viewedOnboarding');
+    } catch (err) {
+      console.log('Error @clearOnboarding:', err);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.root}>
       <Image source={Logo} style={styles.logo} resizeMode="contain" />
@@ -15,6 +33,10 @@ const LoadingPage = () => {
         type={'Primary'}
         onPress={() => navigation.navigate('LogIn')}
       />
+
+      <TouchableOpacity onPress={clearOnboarding}>
+        <Text>Clear Onboarding</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

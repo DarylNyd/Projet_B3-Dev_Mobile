@@ -1,6 +1,7 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import CustomButton from '../CustomButton';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import Entypo from 'react-native-vector-icons/Entypo';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const SocialSigninButtons = () => {
   const onFacebookPress = () => {
@@ -11,29 +12,54 @@ const SocialSigninButtons = () => {
     console.warn('Google pressed');
   };
   return (
-    <SafeAreaView style={styles.root}>
-      <CustomButton
-        text="Sign in with Facebook"
+    <View style={styles.root}>
+      <TouchableOpacity
         onPress={onFacebookPress}
-        bgColor="#0e8cf1"
-        fgColor="#ffffff"
-      />
+        style={styles.button}
+        activeOpacity={0.6}
+        backgroundColor="#0e8cf1">
+        <Entypo name="facebook" size={38} color="#0e8cf1" />
+      </TouchableOpacity>
 
-      <CustomButton
-        text="Sign in with Google"
+      <TouchableOpacity
         onPress={onGooglePress}
-        bgColor="#E64B51"
-        fgColor="#dd4d44"
-      />
-    </SafeAreaView>
+        style={styles.button}
+        activeOpacity={0.6}
+        backgroundColor="#e64b51">
+        <AntDesign name="instagram" size={38} color="#e64b51" />
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={onGooglePress}
+        style={styles.button}
+        activeOpacity={0.6}
+        backgroundColor="#e64b51">
+        <AntDesign name="google" size={38} color="#e64b51" />
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={onGooglePress}
+        style={styles.button}
+        activeOpacity={0.6}
+        backgroundColor="black">
+        <Entypo name="app-store" size={38} color="#000000" />
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
+    //flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 50,
+    marginHorizontal: 5,
   },
 });
 

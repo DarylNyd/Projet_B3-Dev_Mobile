@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, ScrollView, Text, Image} from 'react-native';
+import {View, StyleSheet, SafeAreaView, Text, Image} from 'react-native';
 import Logo from '../../../assets/images/Logo_Artslife.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
@@ -18,7 +18,7 @@ const LoginScreen = () => {
     }
   };
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <SafeAreaView showsVerticalScrollIndicator={false} flex={1}>
       <View style={styles.root}>
         <Image source={Logo} style={styles.logo} resizeMode="contain" />
         <Text style={styles.text}>
@@ -57,7 +57,7 @@ const LoginScreen = () => {
           onPress={() => navigation.navigate('SignUp')}
         />
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

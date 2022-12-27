@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, ScrollView, Text} from 'react-native';
+import {View, StyleSheet, ScrollView, Image, Text} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import Logo from '../../../assets/images/Logo_Artslife.png';
 import SocialSigninButtons from '../../components/SocialSigninButtons/SocialSigninButtons';
 import {useNavigation} from '@react-navigation/native';
 
@@ -22,6 +23,7 @@ const SignUpScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
+        <Image source={Logo} style={styles.logo} resizeMode="contain" />
         <Text style={styles.title}>Create Your Account</Text>
         {/*//<Text>Login Screen</Text>*/}
 
@@ -81,6 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#C4D6F0',
   },
   title: {
     fontSize: 32,
@@ -102,6 +105,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 5,
     color: '#5FC2BA',
+  },
+  logo: {
+    width: '60%',
+    maxWidth: 300,
+    maxHeight: 300,
+    marginTop: -80,
+    marginBottom: -50,
   },
 });
 

@@ -1,14 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Onboarding from '../../components/Onboarding/Onboarding';
-//import AsyncStorage from '@react-native-async-storage/async-storage';
 //import HomeScreen from '../HomeScreen/HomeScreen';
-
-/*const Loading = () => {
-  <View>
-    <ActivityIndicator size={large} />
-  </View>;
-};*/
 
 const OnboardingPage = () => {
   return (

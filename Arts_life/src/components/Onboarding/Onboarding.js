@@ -1,6 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useRef} from 'react';
 import {SafeAreaView, StyleSheet, FlatList, Animated, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import slides from '../../../slides';
 import OnboardingItem from '../../components/OnboardingItem/OnboardingItem';
 import Paginator from '../../components/Paginator_Onboarding/Paginator';
@@ -11,6 +13,7 @@ const Onboarding = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
+  const navigation = useNavigation();
 
   const viewableItemsChanged = useRef(({viewableItems}) => {
     setCurrentIndex(viewableItems[0].index);
@@ -18,11 +21,17 @@ const Onboarding = () => {
 
   const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
 
-  const scrollTo = () => {
+  const scrollTo = async () => {
     if (currentIndex < slides.length - 1) {
       slidesRef.current.scrollToIndex({index: currentIndex + 1});
     } else {
-      console.log('navigate to home');
+      try {
+        console.log('navigate to home');
+        navigation.navigate('Loading');
+        await AsyncStorage.setItem('@viewedOnboarding', 'true');
+      } catch (err) {
+        console.log('Error @setItem', err);
+      }
     }
   };
 
@@ -37,7 +46,10 @@ const Onboarding = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{flex: 3}}>
-        <SkipButton scrollTo={scrollToLast} />
+        {currentIndex !== slides.length - 1 ? (
+          <SkipButton scrollTo={scrollToLast} />
+        ) : null}
+
         <FlatList
           data={slides}
           renderItem={({item}) => <OnboardingItem item={item} />}
