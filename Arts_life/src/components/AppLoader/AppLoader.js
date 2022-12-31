@@ -16,7 +16,7 @@ const AppLoader = () => {
         autoPlay
         loop
   />*/}
-  </View>
+    </View>
   );
 };
 

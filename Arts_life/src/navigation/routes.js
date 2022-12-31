@@ -16,6 +16,8 @@ import ResetPasswordScreen from '../screens/ResetPasswordScreen/ResetPasswordScr
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import DoneScreen from '../screens/DoneScreen/DoneScreen';
 import OnboardingPage from '../screens/OnboardingPage/OnboardingPage';
+import MessageScreen from '../screens/MessageScreen/MessageScreen';
+import ChatScreen from '../screens/ChatScreen/ChatScreen';
 import AppLoader from '../components/AppLoader/AppLoader';
 
 //create a stack navigator to navigate between the screens
@@ -26,8 +28,7 @@ const Loading = () => {
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
-      {/*<ActivityIndicator size="large" />*/}
-      <AppLoader />
+      <ActivityIndicator size="large" />
     </View>
   );
 };
@@ -59,25 +60,33 @@ const Navigation = () => {
   return (
     //Verify if the user has already seen the onboarding page or not and then navigate to the correct screen accordingly
     <NavigationContainer>
-      {loading ? (
-        <Loading />
-      ) : viewedOnboarding ? (
-        <LoadingScreen />
-      ) : (
-        <Stack.Navigator
-          initialRouteName="Onboarding"
-          screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Onboarding" component={OnboardingPage} />
-          <Stack.Screen name="Loading" component={LoadingScreen} />
-          <Stack.Screen name="LogIn" component={LoginScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="SignUp" component={SignUpScreen} />
-          <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-          <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-          <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-          <Stack.Screen name="Done" component={DoneScreen} />
-        </Stack.Navigator>
-      )}
+      <Stack.Navigator
+        initialRouteName="Message"
+        screenOptions={{headerShown: null}}>
+        <Stack.Screen name="Onboarding" component={OnboardingPage} />
+        <Stack.Screen name="Loading" component={LoadingScreen} />
+        <Stack.Screen name="LogIn" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+        <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
+        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+        <Stack.Screen name="Done" component={DoneScreen} />
+        <Stack.Screen
+          name="Message"
+          component={MessageScreen}
+          screenOptions={{headerShown: true}}
+        />
+        <Stack.Screen name="AppLoader" component={AppLoader} />
+        <Stack.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={({route}) => ({
+            title: route.params.userName,
+            headerBackTitleVisible: false,
+          })}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
