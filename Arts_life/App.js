@@ -1,11 +1,13 @@
 import React from 'react';
+import AuthNavigator from './src/navigation/AuthNavigator';
 
-//import {StyleSheet} from 'react-native';
-import Navigation from './src/navigation/routes.js';
+//import Navigation from './src/navigation/routes.js';
 
-export default function App() {
-  return <Navigation />;
+function App() {
+  return <AuthNavigator />;
 }
+
+export default App;
 
 /*const styles = StyleSheet.create({
   container: {

@@ -22,25 +22,16 @@ To run app on your phone without using expo:
 
 Replace to route when finished with other pages
 
- <NavigationContainer>
-      {loading ? (
-        <Loading />
-      ) : viewedOnboarding ? (
-        <LoadingScreen />
-      ) : (
-        <Stack.Navigator
-          initialRouteName="Message"
-          screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Onboarding" component={OnboardingPage} />
-          <Stack.Screen name="Loading" component={LoadingScreen} />
-          <Stack.Screen name="LogIn" component={LoginScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="SignUp" component={SignUpScreen} />
-          <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-          <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-          <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-          <Stack.Screen name="Done" component={DoneScreen} />
-          <Stack.Screen name="Message" component={MessageScreen} />
-        </Stack.Navigator>
-      )}
-    </NavigationContainer>
+ {/*<Stack.Screen
+        name={ROUTES.FORGOT_PASSWORD}
+        component={ForgotPassword}
+        options={({route}) => ({
+          headerTintColor: COLORS.white,
+          // headerBackTitle: 'Back',
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+          },
+          title: route.params.userId,
+        })}
+      />*/}

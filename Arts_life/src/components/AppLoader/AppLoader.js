@@ -11,11 +11,6 @@ const AppLoader = () => {
         autoPlay
         loop
       />
-      {/*<LottieView
-        source={require('../../../assets/animations/loading.json')}
-        autoPlay
-        loop
-  />*/}
     </View>
   );
 };
