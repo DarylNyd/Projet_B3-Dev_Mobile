@@ -13,6 +13,7 @@ import {
   MessageText,
   TextSection,
 } from './MessageStyles';
+import AppHeader from '../../components/AppHeader/AppHeader';
 
 const Messages = [
   {
@@ -58,6 +59,12 @@ const MessageScreen = () => {
   const navigation = useNavigation();
   return (
     <Container>
+      <AppHeader
+        menu={false}
+        title="Messages"
+        right="more-vertical"
+        onRightPress={() => {}}
+      />
       <FlatList
         data={Messages}
         keyExtractor={item => item.id}

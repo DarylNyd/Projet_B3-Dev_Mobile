@@ -35,3 +35,11 @@ Replace to route when finished with other pages
           title: route.params.userId,
         })}
       />*/}
+
+      screens to complete
+      home import les produits
+      import
+      dashboard
+      more
+
+      do loader animation

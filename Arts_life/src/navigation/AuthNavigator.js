@@ -16,8 +16,8 @@ import ResetPasswordScreen from '../screens/ResetPasswordScreen/ResetPasswordScr
 import DoneScreen from '../screens/DoneScreen/DoneScreen';
 import AppLoader from '../components/AppLoader/AppLoader';
 
-//import DrawerNavigator from './DrawerNavigator';
-import BottomTabNavigator from './BottomTabNavigator';
+//importing the AppStack
+import AppStack from './AppStack';
 
 const Stack = createNativeStackNavigator();
 // Navigator, Screen, Group
@@ -47,25 +47,25 @@ const AuthNavigator = () => {
   }, []);
   return (
     <NavigationContainer>
-      {loading ? (
+      {/*{loading ? (
         <AppLoader />
       ) : viewedOnboarding ? (
         <LoadingScreen />
-      ) : (
-        <Stack.Navigator
-          initialRouteName="Onboarding"
-          screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Onboarding" component={OnboardingPage} />
-          <Stack.Screen name="Loading" component={LoadingScreen} />
-          <Stack.Screen name="LogIn" component={LoginScreen} />
-          <Stack.Screen name="SignUp" component={SignUpScreen} />
-          <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-          <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-          <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-          <Stack.Screen name="Done" component={DoneScreen} />
-          <Stack.Screen name="Home" component={BottomTabNavigator} />
-        </Stack.Navigator>
-      )}
+      ) : (*/}
+      <Stack.Navigator
+        initialRouteName="Onboarding"
+        screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Onboarding" component={OnboardingPage} />
+        <Stack.Screen name="Loading" component={LoadingScreen} />
+        <Stack.Screen name="LogIn" component={LoginScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+        <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
+        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+        <Stack.Screen name="Done" component={DoneScreen} />
+        <Stack.Screen name="Home" component={AppStack} />
+      </Stack.Navigator>
+      {/*} )}*/}
     </NavigationContainer>
   );
 };
