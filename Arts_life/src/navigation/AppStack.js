@@ -17,6 +17,7 @@ import ImportScreen from '../screens/ImportScreen/ImportScreen';
 import Dashboard from '../screens/DashboardScreen/DashboardScreen';
 import MoreScreen from '../screens/MoreScreen/MoreScreen';
 import ChatScreen from '../screens/ChatScreen/ChatScreen';
+import ViewProductScreen from '../screens/ViewProductScreen/ViewProductScreen';
 
 import CustomTabBarButton from '../components/CustomTabBarButton/CustomTabBarButton';
 
@@ -29,6 +30,11 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ViewProduct"
+        component={ViewProductScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
@@ -121,7 +127,6 @@ const AppStack = () => {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          position: 'absolute',
           bottom: 10,
           left: 9,
           right: 9,
@@ -180,6 +185,7 @@ const AppStack = () => {
         component={ImportStack}
         options={{
           headerShown: false,
+          tabBarVisible: false,
           tabBarIcon: ({focused}) => (
             <View>
               <Feather

@@ -11,19 +11,19 @@ const FilterList = () => {
       showsHorizontalScrollIndicator={false}>
       <CustomFilter text="Popular" type="Primary" onPress={() => {}} />
 
-      <CustomFilter text="Manga" type="Secondary" onPress={() => {}} />
+      <CustomFilter text="Manga" type="Primary" onPress={() => {}} />
 
       <CustomFilter text="Realism" type="Primary" onPress={() => {}} />
 
-      <CustomFilter text="Cartoon" type="Secondary" onPress={() => {}} />
+      <CustomFilter text="Cartoon" type="Primary" onPress={() => {}} />
 
       <CustomFilter text="Popular" type="Primary" onPress={() => {}} />
 
-      <CustomFilter text="Manga" type="Secondary" onPress={() => {}} />
+      <CustomFilter text="Manga" type="Primary" onPress={() => {}} />
 
       <CustomFilter text="Realism" type="Primary" onPress={() => {}} />
 
-      <CustomFilter text="Cartoon" type="Secondary" onPress={() => {}} />
+      <CustomFilter text="Cartoon" type="Primary" onPress={() => {}} />
     </ScrollView>
   );
 };

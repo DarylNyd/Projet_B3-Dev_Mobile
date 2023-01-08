@@ -1,23 +1,38 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 import AppHeader from '../../components/AppHeader/AppHeader';
+import {
+  Container,
+  Conatainer,
+  MoreImage,
+  Line,
+  Text2,
+  Text3,
+  Header,
+} from './styles';
+import LottieView from 'lottie-react-native';
 
 const Dashboard = () => {
   return (
-    <View style={styles.container}>
+    <Container>
       <AppHeader menu={false} title="More" />
-      <Text>More Or Futur Options here</Text>
-    </View>
+      <Conatainer>
+        <Header>Thank You for Your Support..</Header>
+        <MoreImage>
+          <LottieView
+            source={require('../../../assets/animations/thanks-message.json')}
+            autoPlay
+            loop
+          />
+        </MoreImage>
+        <Text2>Stay Tuned, More Thinhgs are Coming for Dear Artist</Text2>
+        <Line>
+          <Text3>Nyd Coperation</Text3>
+          <Text3>Contact Us on nyddaryl@gmail.com</Text3>
+        </Line>
+      </Conatainer>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C4D6F0',
-  },
-});
 
 export default Dashboard;

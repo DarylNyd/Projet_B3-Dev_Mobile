@@ -12,6 +12,7 @@ const AppHeader = ({
   back,
   title,
   right,
+  backPress,
   onRightPress,
   optionalBtn,
   optionalBtnPress,
@@ -27,7 +28,7 @@ const AppHeader = ({
         </TouchableOpacity>
       )}
       {back && (
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={backPress}>
           <Feather name="arrow-left" size={IconSize} color={'#26474E'} />
         </TouchableOpacity>
       )}

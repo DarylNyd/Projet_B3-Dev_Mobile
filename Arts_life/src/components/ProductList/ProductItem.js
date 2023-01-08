@@ -32,7 +32,8 @@ const ProductItem = ({item}) => {
   };
   return (
     <CapsuleContainer>
-      <ImageContainer>
+      <ImageContainer
+        onPress={() => navigation.navigate('ViewProduct', {product: item})}>
         <ProductImage
           source={item.image}
           style={[{width, resizeMode: 'contain'}]}

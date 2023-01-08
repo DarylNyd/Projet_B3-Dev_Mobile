@@ -8,7 +8,7 @@ const Root = styled.View`
   flex: 16;
   align-items: center;
   background-color: #c4d6f0;
-  margin-top: 10;
+  margin-top: 10px;
 `;
 
 const ProductList = () => {

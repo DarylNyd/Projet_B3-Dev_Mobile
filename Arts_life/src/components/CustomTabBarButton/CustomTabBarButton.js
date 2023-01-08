@@ -5,7 +5,7 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 const CustomTabBarButton = ({children, onPress}) => (
   <TouchableOpacity
     style={{
-      top: -30,
+      top: -20,
       justifyContent: 'center',
       alignItems: 'center',
       ...styles.shadow,
