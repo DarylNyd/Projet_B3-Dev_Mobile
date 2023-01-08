@@ -56,7 +56,7 @@ const MessageStack = () => {
         component={ChatScreen}
         options={({route}) => ({
           title: route.params.userName,
-          headerBackTitleVisible: false,
+          headerBackTitleVisible: true,
           headerTitleAlign: 'center',
           headerTintColor: '#5FC2BA',
           headerStyle: {
