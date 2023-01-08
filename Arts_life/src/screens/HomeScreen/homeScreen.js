@@ -3,6 +3,7 @@ import {View, StyleSheet, SafeAreaView} from 'react-native';
 import AppHeader from '../../components/AppHeader/AppHeader';
 import FilterList from '../../components/FilterList.js/FilterList';
 import HomeList from '../../components/HomeScrollList/HomeList';
+import TestApi from './TestApi';
 
 const HomeScreen = () => {
   return (
@@ -18,7 +19,7 @@ const HomeScreen = () => {
           optionalBadge={3}
         />
         <FilterList style={styles.filterList} />
-        <HomeList />
+        <TestApi />
       </View>
     </SafeAreaView>
   );
