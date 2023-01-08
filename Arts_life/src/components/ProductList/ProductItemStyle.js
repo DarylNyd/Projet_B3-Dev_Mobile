@@ -4,50 +4,50 @@ export const Root = styled.View`
   flex: 16;
   align-items: center;
   background-color: #c4d6f0;
-  margin-top: 10;
+  margin-top: 10px;
 `;
 
 export const CapsuleContainer = styled.View`
-  height: 400;
+  height: 400px;
   background-color: #fff;
-  margin-vertical: 10;
-  border-radius: 10;
+  margin-vertical: 10px;
+  border-radius: 10px;
 `;
 
 export const ImageContainer = styled.TouchableOpacity`
   background-color: #f2f2f2;
-  height: 300;
-  width: 390;
+  height: 300px;
+  width: 390px;
 `;
 
 export const DetailsContainer = styled.View`
   flex-direction: row;
   align-items: center;
   background-color: white;
-  height: 100;
-  width: 390;
-  border-radius: 10;
+  height: 100px;
+  width: 390px;
+  border-radius: 10px;
 `;
 
 export const AuthorPic = styled.View`
   background-color: red;
-  height: 50;
-  width: 50;
-  border-radius: 50;
-  margin-left: 10;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-left: 10px;
 `;
 
 export const ProductInfo = styled.View`
-  height: 70;
-  width: 150;
-  margin-left: 10;
+  height: 70px;
+  width: 150px;
+  margin-left: 10px;
 `;
 
 export const OptionsBloc = styled.View`
-  height: 80;
-  width: 120;
-  margin-right: 10;
-  margin-left: 40;
+  height: 80px;
+  width: 120px;
+  margin-right: 10px;
+  margin-left: 40px;
 `;
 
 export const Options = styled.View`
@@ -58,45 +58,45 @@ export const Options = styled.View`
 
 export const ProductImage = styled.Image`
   flex: 1;
-  height: 300;
+  height: 300px;
 `;
 
 export const ProductName = styled.Text`
-  font-size: 16;
+  font-size: 16px;
   font-weight: bold;
   color: #26474e;
   font-family: 'Poppins';
 `;
 
 export const AuthorName = styled.Text`
-  font-size: 14;
+  font-size: 14px;
   font-weight: bold;
   color: #26474e;
   font-family: 'Poppins';
 `;
 
 export const Time = styled.Text`
-  font-size: 12;
+  font-size: 12px;
   color: grey;
   font-family: 'Poppins';
 `;
 
 export const Price = styled.View`
-  height: 40;
-  border-radius: 10;
+  height: 40px;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
 `;
 
 export const PriceValue = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   font-weight: bold;
   color: green;
   font-family: 'Poppins';
 `;
 
 export const AuthorImage = styled.Image`
-  width: 50;
-  height: 50;
-  border-radius: 50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 `;
