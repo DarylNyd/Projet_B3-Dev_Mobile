@@ -10,7 +10,7 @@ import {
 
 import Feather from 'react-native-vector-icons/Feather';
 
-const CustomRows = ({icon, value, onPress}) => {
+const CustomRows = ({icon, icon2, value, onPress}) => {
   const rowAction = () => {
     onPress(onPress);
   };
@@ -26,7 +26,7 @@ const CustomRows = ({icon, value, onPress}) => {
         <TextStyle>{value}</TextStyle>
       </CenterView>
       <RightView>
-        <Feather name="arrow-right" size={30} color="#26474E" />
+        <Feather name={icon2} size={30} color="#26474E" />
       </RightView>
     </MainRows>
   );

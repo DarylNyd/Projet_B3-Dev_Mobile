@@ -25,7 +25,7 @@ const Dashboard = () => {
             loop
           />
         </MoreImage>
-        <Text2>Stay Tuned, More Thinhgs are Coming for Dear Artist</Text2>
+        <Text2>Stay Tuned, More Features are Coming for Dear Artist</Text2>
         <Line>
           <Text3>Nyd Coperation</Text3>
           <Text3>Contact Us on nyddaryl@gmail.com</Text3>

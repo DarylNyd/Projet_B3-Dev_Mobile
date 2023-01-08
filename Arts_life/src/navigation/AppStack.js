@@ -18,6 +18,7 @@ import Dashboard from '../screens/DashboardScreen/DashboardScreen';
 import MoreScreen from '../screens/MoreScreen/MoreScreen';
 import ChatScreen from '../screens/ChatScreen/ChatScreen';
 import ViewProductScreen from '../screens/ViewProductScreen/ViewProductScreen';
+import MyWorksScreen from '../screens/MyWorksScreen/MyWorksScreen';
 
 import CustomTabBarButton from '../components/CustomTabBarButton/CustomTabBarButton';
 
@@ -93,6 +94,11 @@ const DashboardStack = () => {
       <Stack.Screen
         name="Dashboard"
         component={Dashboard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MyWorks"
+        component={MyWorksScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

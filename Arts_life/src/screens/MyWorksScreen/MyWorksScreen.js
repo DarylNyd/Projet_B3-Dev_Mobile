@@ -1,4 +1,6 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import AppHeader from '../../components/AppHeader/AppHeader';
 import {
   Container,
   Header,
@@ -8,13 +10,20 @@ import {
   UserName,
   UserEmail,
 } from './styles';
-import AppHeader from '../../components/AppHeader/AppHeader';
-import UserRows from '../../components/CustomRows/UserRows';
+import WorkList from '../../components/WorkList/WorkList';
 
-const Dashboard = () => {
+const MyWorksScreen = () => {
+  const navigation = useNavigation();
   return (
     <Container>
-      <AppHeader menu={false} title="User Dashboard" />
+      <AppHeader
+        menu={false}
+        back={true}
+        backPress={() => {
+          navigation.navigate('Dashboard');
+        }}
+        title="My Works"
+      />
       <Header>
         <UserImage>
           <Image2
@@ -26,9 +35,9 @@ const Dashboard = () => {
           <UserEmail>artnyd@gmail.com</UserEmail>
         </UserDetails>
       </Header>
-      <UserRows />
+      <WorkList />
     </Container>
   );
 };
 
-export default Dashboard;
+export default MyWorksScreen;
