@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0f2',
     borderRadius: 10,
+    margin: 5,
   },
   WorkImage: {
     width: 100,
@@ -40,16 +41,12 @@ const WorkList = () => {
   return (
     <View
       style={{
-        padding: 10,
-        marginTop: 10,
-        marginVertical: 10,
+        marginTop: 20,
       }}>
       <View
         style={{
           flexDirection: 'row',
-          justifyContent: 'space-between',
           paddingHorizontal: 5,
-          paddingVertical: 8,
         }}>
         <Work
           image={require('../../../assets/images/Products-images/blackstar.jpeg')}
@@ -64,9 +61,7 @@ const WorkList = () => {
       <View
         style={{
           flexDirection: 'row',
-          justifyContent: 'space-between',
           paddingHorizontal: 5,
-          paddingVertical: 8,
         }}>
         <Work
           image={require('../../../assets/images/Products-images/Italiankids.jpeg')}
@@ -81,8 +76,6 @@ const WorkList = () => {
       <View
         style={{
           flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingVertical: 8,
           paddingHorizontal: 5,
         }}>
         <Work

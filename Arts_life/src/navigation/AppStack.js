@@ -36,7 +36,7 @@ const HomeStack = () => {
       <Stack.Screen
         name="ViewProduct"
         component={ViewProductScreen}
-        options={{headerShown: false}}
+        options={{headerShown: false, tabBarVisible: false}}
       />
     </Stack.Navigator>
   );
@@ -63,6 +63,7 @@ const MessageStack = () => {
         component={ChatScreen}
         options={({route}) => ({
           title: route.params.userName,
+          tabBarVisible: false,
           headerBackTitleVisible: true,
           headerTitleAlign: 'center',
           headerTintColor: '#5FC2BA',
@@ -99,7 +100,7 @@ const DashboardStack = () => {
       <Stack.Screen
         name="MyWorks"
         component={MyWorksScreen}
-        options={{headerShown: false}}
+        options={{headerShown: false, tabBarVisible: false}}
       />
     </Stack.Navigator>
   );
@@ -132,10 +133,11 @@ const AppStack = () => {
     <Tab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
+        tarBarVisible: true,
         tabBarStyle: {
-          bottom: 10,
-          left: 9,
-          right: 9,
+          bottom: 4,
+          left: 2,
+          right: 2,
           elevation: 0,
           backgroundColor: '#fff',
           borderRadius: 15,
