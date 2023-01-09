@@ -25,11 +25,11 @@ See figma prototype here
 
 -Post his works in the application
 
--Functional messaging interface
+-Messaging interface
 
 -Put filters for different styles
 
--If possible add payment method
+
 
 
 ### Authors
