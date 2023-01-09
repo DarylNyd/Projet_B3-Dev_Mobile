@@ -7,7 +7,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //Screens
 import OnboardingPage from '../screens/OnboardingPage/OnboardingPage';
-import LoadingScreen from '../screens/OnboardingPage/LoadingScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen/SignUpScreen';
 import ConfirmEmailScreen from '../screens/ConfirmEmailScreen/ConfirmEmail.Screen';
@@ -33,6 +32,8 @@ const AuthNavigator = () => {
       const value = await AsyncStorage.getItem('@viewedOnboarding');
       if (value !== null) {
         setViewedOnboarding(true);
+      } else {
+        setViewedOnboarding(false);
       }
     } catch (err) {
       console.log('Error @checkOnboarding: ', err);
@@ -41,31 +42,39 @@ const AuthNavigator = () => {
     }
   };
 
-  //Create a useEffect hook to use the checkOnboarding function
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
+
+  if (loading) {
+    return <AppLoader />;
+  }
+
+  /*//Create a useEffect hook to use the checkOnboarding function
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     checkOnboarding();
-  }, []);
+  }, []);*/
   return (
     <NavigationContainer>
-      {/*{loading ? (
-        <AppLoader />
-      ) : viewedOnboarding ? (
-        <LoadingScreen />
-      ) : (*/}
-      <Stack.Navigator
-        initialRouteName="Onboarding"
-        screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Onboarding" component={OnboardingPage} />
-        <Stack.Screen name="Loading" component={LoadingScreen} />
-        <Stack.Screen name="LogIn" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-        <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
-        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-        <Stack.Screen name="Done" component={DoneScreen} />
-        <Stack.Screen name="Home" component={AppStack} />
-      </Stack.Navigator>
-      {/*} )}*/}
+      {viewedOnboarding ? (
+        <LoginScreen />
+      ) : (
+        <Stack.Navigator
+          initialRouteName="Onboarding"
+          screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Onboarding" component={OnboardingPage} />
+          <Stack.Screen name="LogIn" component={LoginScreen} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
+          <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+          <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
+          <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+          <Stack.Screen name="Done" component={DoneScreen} />
+          <Stack.Screen name="Home" component={AppStack} />
+        </Stack.Navigator>
+      )}
     </NavigationContainer>
   );
 };

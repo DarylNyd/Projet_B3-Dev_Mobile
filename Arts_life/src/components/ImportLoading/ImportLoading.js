@@ -3,14 +3,11 @@ import {View, StyleSheet} from 'react-native';
 
 import LottieView from 'lottie-react-native';
 
-const AppLoader = props => {
-  const {loading} = props;
+const AppLoader = () => {
   return (
-    <View
-      style={[StyleSheet.absoluteFillObject, styles.container]}
-      animating={loading}>
+    <View style={[StyleSheet.absoluteFillObject, styles.container]}>
       <LottieView
-        source={require('../../../assets/animations/character-walk.json')}
+        source={require('../../../assets/animations/uploading.json')}
         autoPlay
         loop
       />

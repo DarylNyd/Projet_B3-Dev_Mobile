@@ -27,7 +27,7 @@ const Onboarding = () => {
     } else {
       try {
         console.log('navigate to home');
-        navigation.navigate('Loading');
+        navigation.replace('LogIn', {screen: 'AuthStack'});
         await AsyncStorage.setItem('@viewedOnboarding', 'true');
       } catch (err) {
         console.log('Error @setItem', err);

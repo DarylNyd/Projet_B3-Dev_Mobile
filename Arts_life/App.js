@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthNavigator from './src/navigation/AuthNavigator';
+//import AppLoader from './src/components/AppLoader/AppLoader';
 
 //import Navigation from './src/navigation/routes.js';
 
