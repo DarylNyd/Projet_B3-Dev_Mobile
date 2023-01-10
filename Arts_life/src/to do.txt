@@ -43,4 +43,6 @@ Replace to route when finished with other pages
       more
 
       do loader animation
+      mettre des pub
+      notification push
 

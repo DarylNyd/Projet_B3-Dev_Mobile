@@ -18,6 +18,7 @@ const Dashboard = () => {
       <AppHeader menu={false} title="More" />
       <Conatainer>
         <Header>Thank You for Your Support..</Header>
+        <Header>Go follow my Ig: master_nyd for my works</Header>
         <MoreImage>
           <LottieView
             source={require('../../../assets/animations/thanks-message.json')}
