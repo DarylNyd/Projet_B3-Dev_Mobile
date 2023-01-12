@@ -1,7 +1,7 @@
 /* eslint-disable no-lone-blocks */
 import React from 'react';
 import {FlatList} from 'react-native';
-import Productcontent from './Productcontent';
+//import Productcontent from './Productcontent';
 import ProductItem from './ProductItem';
 import styled from 'styled-components/native';
 
@@ -12,7 +12,7 @@ const Root = styled.View`
   margin-top: 10px;
 `;
 
-const ProductList = () => {
+const ProductList = ({products}) => {
   {
     /*console.log(Productcontent);
   console.log(styled);/*/
@@ -21,7 +21,7 @@ const ProductList = () => {
   return (
     <Root>
       <FlatList
-        data={Productcontent}
+        data={products}
         keyExtractor={item => item.id}
         renderItem={({item}) => <ProductItem item={item} />}
       />

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet, ActivityIndicator} from 'react-native';
 import axios from 'axios';
+
+import ProductItem from '../ProductList/ProductItem';
 
 const ApiUrl = 'http://localhost:8055/items/Products';
 
@@ -11,64 +13,32 @@ const ApiUrl = 'http://localhost:8055/items/Products';
 
 const HomeList = () => {
   const [products, setProducts] = useState([]);
-  const [totalPages, setTotalPages] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(0);
-  const offset = 10;
 
   useEffect(() => {
     setLoading(true);
-    axios({
-      method: 'GET',
-      url: ApiUrl,
-      params: {
-        offset: page * offset,
-        limit: 20,
-      },
-    })
+    axios
+      .get(ApiUrl)
       .then(response => {
-        console.log(response.data.data.results);
+        console.log(response.data.data);
         setProducts(response.data.data.results);
-        setTotalPages(response.data.data.totalPages);
         setLoading(false);
       })
       .catch(error => {
         console.log(error);
         setLoading(false);
       });
-  }, [page, products]);
-
-  const renderProduct = ({item}) => {
-    return (
-      <View>
-        <Image
-          source={{uri: item.image}}
-          style={styles.image}
-          resizeMode="contain"
-        />
-        <View style={styles.textContainer}>
-          <Text>{item.name}</Text>
-          <Text>{item.price}</Text>
-          <Text>{item.Author}</Text>
-        </View>
-      </View>
-    );
-  };
+  }, [products]);
 
   return (
     <View style={styles.container}>
       {loading ? (
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" color="#0000ff" />
       ) : (
         <FlatList
           data={products}
           keyExtractor={item => item.id}
-          renderItem={renderProduct}
-          onEndReached={() => {
-            if (page < totalPages) {
-              setPage(page + 1);
-            }
-          }}
+          renderItem={({item}) => <ProductItem item={item} />}
           onEndReachedThreshold={0.5}
         />
       )}

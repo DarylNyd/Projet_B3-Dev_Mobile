@@ -1,15 +1,31 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 import AppHeader from '../../components/AppHeader/AppHeader';
 import FilterList from '../../components/FilterList.js/FilterList';
-import HomeList from '../../components/HomeScrollList/HomeList';
+//import HomeList from '../../components/HomeScrollList/HomeList';
 import ProductList from '../../components/ProductList/ProductList';
-import TestApi from './TestApi';
+import Productcontent from '../../components/ProductList/Productcontent';
+import styled from 'styled-components';
+
+const Root = styled.View`
+  flex: 1;
+  align-items: center;
+  background-color: #c4d6f0;
+`;
+
+//import TestApi from './TestApi';
 
 const HomeScreen = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const filteredData = Productcontent.filter(
+    item => !selectedCategory || item.category === selectedCategory,
+  );
+  console.log(filteredData);
+
   return (
-    <View style={[styles.root]}>
+    <Root>
       <View>
         <AppHeader
           menu={true}
@@ -20,23 +36,11 @@ const HomeScreen = () => {
           optionalBtnPress={() => {}}
           optionalBadge={3}
         />
-        <FilterList style={styles.filterList} />
-        <ProductList />
+        <FilterList style={{flex: 3}} onPress={setSelectedCategory} />
+        <ProductList products={filteredData} />
       </View>
-    </View>
+    </Root>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    //justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C4D6F0',
-  },
-  filterList: {
-    flex: 1,
-  },
-});
 
 export default HomeScreen;

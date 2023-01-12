@@ -11,7 +11,7 @@ const LoginScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const Login = () => {
-    if (username === 'Nyd_Daryl' && password === 'root') {
+    if (username === '' && password === '') {
       navigation.navigate('Home');
     } else {
       console.log('Wrong username or password');
