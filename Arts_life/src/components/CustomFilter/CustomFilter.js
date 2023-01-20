@@ -25,7 +25,7 @@ const CustomFilter = ({onPress, text, type, bgColor, fgColor}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '20%',
+    width: '10%',
     height: 30,
     borderRadius: 50,
     justifyContent: 'center',

@@ -1,30 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View} from 'react-native';
+import {Container, HeaderTitle, ValidateSection} from './styles';
 import AppHeader from '../../components/AppHeader/AppHeader';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import styled from 'styled-components';
 import ImportForm from '../../components/ImportForm/ImportForm';
-
-const Container = styled.ScrollView`
-  flex: 1;
-  background-color: #c4d6f0;
-`;
-const HeaderTitle = styled.Text`
-  font-size: 20px;
-  font-weight: bold;
-  color: #26474e;
-  margin-top: 20px;
-  margin-left: 15px;
-`;
-
-const ValidateSection = styled.View`
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-horizontal: 20px;
-  margin-top: 20px;
-`;
 
 const ImportScreen = () => {
   return (

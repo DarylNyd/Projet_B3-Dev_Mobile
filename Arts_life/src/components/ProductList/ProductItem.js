@@ -67,7 +67,7 @@ const ProductItem = ({item}) => {
               onPress={() => {
                 navigation.navigate('MESSAGE', {
                   screen: 'Chat',
-                  params: {title: item.author},
+                  params: {userName: item.author},
                 });
               }}>
               <Feather name="message-circle" size={27} color="#000" />

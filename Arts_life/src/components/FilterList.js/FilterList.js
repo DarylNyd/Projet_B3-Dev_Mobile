@@ -1,5 +1,4 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
 import CustomFilter from '../CustomFilter/CustomFilter';
 
 import styled from 'styled-components';
@@ -91,18 +90,5 @@ const FilterList = ({onPress}) => {
     </Root>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    height: 60,
-    flex: 1,
-    flexDirection: 'row',
-    //flexWrap: 'wrap',
-    //justifyContent: 'center',
-    //alignItems: 'center',
-    backgroundColor: '#C4D6F0',
-    marginTop: 11,
-  },
-});
 
 export default FilterList;

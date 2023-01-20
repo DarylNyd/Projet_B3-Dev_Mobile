@@ -22,7 +22,6 @@ const HomeScreen = () => {
   const filteredData = Productcontent.filter(
     item => !selectedCategory || item.category === selectedCategory,
   );
-  console.log(filteredData);
 
   return (
     <Root>

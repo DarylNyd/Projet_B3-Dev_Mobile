@@ -1,29 +1,26 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
+import styled from 'styled-components/native';
 import LottieView from 'lottie-react-native';
+
+const Container = styled.View`
+  justify-content: center;
+  align-items: center;
+  background-color: #c4d6f0;
+`;
 
 const AppLoader = props => {
   const {loading} = props;
   return (
-    <View
-      style={[StyleSheet.absoluteFillObject, styles.container]}
-      animating={loading}>
+    <Container style={[StyleSheet.absoluteFillObject]} animating={loading}>
       <LottieView
         source={require('../../../assets/animations/character-walk.json')}
         autoPlay
         loop
       />
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C4D6F0',
-  },
-});
 
 export default AppLoader;
