@@ -74,6 +74,7 @@ const ViewProductScreen = ({route}) => {
           />
 
           <CustomButton text="Send Message" type="Primary" onPress={() => {}} />
+          <CustomButton text="Buy Now" type="Primary" onPress={() => {}} />
         </ViewButtons>
       </ScrollView>
     </Root>

@@ -29,7 +29,7 @@ const AppHeader = ({
       )}
       {back && (
         <TouchableOpacity onPress={backPress}>
-          <Feather name="arrow-left" size={IconSize} color={'#26474E'} />
+          <Feather name="arrow-left" size={IconSize} color={'#5FC2BA'} />
         </TouchableOpacity>
       )}
     </View>
